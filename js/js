@@ -1,0 +1,48 @@
+let eligeCompu = "";
+
+console.log("1- Piedra");
+console.log("2- Papel");
+console.log("3- Tijera");
+let opcion = parseInt(prompt("¿Qué número eliges?: "));
+
+let aleatorio = Math.floor(Math.random() * 3) + 1;
+
+let eligeJugador = "";
+
+if (opcion === 1) {
+  eligeJugador = "piedra";
+} else if (opcion === 2) {
+  eligeJugador = "papel";
+} else if (opcion === 3) {
+  eligeJugador = "tijera";
+}
+console.log("Tu turno: " + eligeJugador);
+
+if (aleatorio === 1) {
+  eligeCompu = "piedra";
+} else if (aleatorio === 2) {
+  eligeCompu = "papel";
+} else if (aleatorio === 3) {
+  eligeCompu = "tijera";
+}
+console.log("La compu eligió: " + eligeCompu);
+console.log(" ");
+
+if (eligeCompu === "piedra" && eligeJugador === "papel") {
+  console.log("Ganaste, papel envuelve piedra\n");
+} else if (eligeCompu === "papel" && eligeJugador === "tijera") {
+  console.log("Ganaste, Tijera corta papel\n");
+} else if (eligeCompu === "tijera" && eligeJugador === "piedra") {
+  console.log("Ganaste, Piedra pisa tijera\n");
+}
+if (eligeCompu === "papel" && eligeJugador === "piedra") {
+  console.log("Perdiste, papel envuelve piedra\n");
+} else if (eligeCompu === "tijera" && eligeJugador === "papel") {
+  console.log("Perdiste, Tijera corta papel\n");
+} else if (eligeCompu === "piedra" && eligeJugador === "tijera") {
+  console.log("Perdiste, Piedra pisa tijera\n");
+} else if (eligeCompu === eligeJugador) {
+  console.log("Empate\n");
+}
+
+console.log("Fin de juego");
